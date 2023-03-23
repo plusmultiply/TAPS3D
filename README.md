@@ -6,6 +6,6 @@
 **TAPS3D: Text-Guided 3D Textured Shape Generation from Pseudo Supervision**<br>
 Jiacheng Wei*, Hao Wang*, Jiashi Feng, Guosheng Lin, and Kim-Hui Yap
 
-![Teaser Results](diversity_5rows.png)
+
 
 The code will be released soon.
