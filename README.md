@@ -116,4 +116,3 @@ TAPS3D builds upon several previous works:
   year={2023}
 }
 ```
->>>>>>> release
