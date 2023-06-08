@@ -1,0 +1,14 @@
+{ 
+    "shapenet_car": "02958343", 
+    "shapenet_chair": "03001627", 
+    "shapenet_motorbike": "03790512", 
+    "shapenet_table": "04379243",
+    "shapenet_bed": "02818832",
+    "shapenet_plane": "02691156",
+    "shapenet_cap": "02954340",
+    "shapenet_clock": "03046257",
+    "shapenet_microphone": "03759954",
+    "shapenet_microwave": "03761084",
+    "shapenet_rocket": "04099429",
+    "shapenet_vessel": "04530566"
+}
