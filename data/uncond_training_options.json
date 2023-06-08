@@ -1,0 +1,102 @@
+{
+  "G_kwargs": {
+    "class_name": "training.networks_get3d.GeneratorDMTETMesh",
+    "z_dim": 512,
+    "w_dim": 512,
+    "mapping_kwargs": {
+      "num_layers": 8
+    },
+    "one_3d_generator": true,
+    "n_implicit_layer": 1,
+    "deformation_multiplier": 1.0,
+    "use_style_mixing": true,
+    "dmtet_scale": 1.0,
+    "feat_channel": 16,
+    "mlp_latent_channel": 32,
+    "tri_plane_resolution": 256,
+    "n_views": 1,
+    "render_type": "neural_render",
+    "use_tri_plane": true,
+    "tet_res": 90,
+    "geometry_type": "conv3d",
+    "data_camera_mode": "shapenet_motorbike,shapenet_car,shapenet_chair,shapenet_table,shapenet_plane,shapenet_bed",
+    "channel_base": 32768,
+    "channel_max": 512,
+    "fused_modconv_default": "inference_only"
+  },
+  "D_kwargs": {
+    "class_name": "training.networks_get3d.Discriminator",
+    "block_kwargs": {
+      "freeze_layers": 0
+    },
+    "mapping_kwargs": {},
+    "epilogue_kwargs": {
+      "mbstd_group_size": 4
+    },
+    "data_camera_mode": "shapenet_motorbike,shapenet_car,shapenet_chair,shapenet_table,shapenet_plane,shapenet_bed",
+    "add_camera_cond": true,
+    "channel_base": 32768,
+    "channel_max": 512,
+    "architecture": "skip"
+  },
+  "G_opt_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "betas": [
+      0,
+      0.99
+    ],
+    "eps": 1e-08,
+    "lr": 0.002
+  },
+  "D_opt_kwargs": {
+    "class_name": "torch.optim.Adam",
+    "betas": [
+      0,
+      0.99
+    ],
+    "eps": 1e-08,
+    "lr": 0.002
+  },
+  "loss_kwargs": {
+    "class_name": "training.loss.StyleGAN2Loss",
+    "gamma_mask": 50.0,
+    "r1_gamma": 50.0,
+    "style_mixing_prob": 0.9,
+    "pl_weight": 0.0
+  },
+  "data_loader_kwargs": {
+    "pin_memory": true,
+    "prefetch_factor": 2,
+    "num_workers": 3
+  },
+  "inference_vis": false,
+  "training_set_kwargs": {
+    "class_name": "training.dataset.ImageFolderDataset",
+    "path": "data/ShapeNetCore_save/img/",
+    "use_labels": false,
+    "max_size": 476928,
+    "xflip": false,
+    "resolution": 1024,
+    "data_camera_mode": "shapenet_motorbike,shapenet_car,shapenet_chair,shapenet_table,shapenet_plane,shapenet_bed",
+    "add_camera_cond": true,
+    "camera_path": "data/ShapeNetCore_save/camera/",
+    "split": "train",
+    "random_seed": 0
+  },
+  "resume_pretrain": null,
+  "D_reg_interval": 16,
+  "num_gpus": 8,
+  "batch_size": 32,
+  "batch_gpu": 4,
+  "metrics": [
+    "fid50k"
+  ],
+  "total_kimg": 20000,
+  "kimg_per_tick": 1,
+  "image_snapshot_ticks": 50,
+  "network_snapshot_ticks": 200,
+  "random_seed": 0,
+  "ema_kimg": 10.0,
+  "G_reg_interval": 4,
+  "run_dir": "uncond_multiclass/00000-stylegan2--gpus8-batch32-gamma50"
+}
