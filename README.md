@@ -47,7 +47,7 @@ Please download the ShapeNetCore.v1 dataset from this [link](https://shapenet.or
 
 Please follow the instructions from [GET3D](https://github.com/nv-tlabs/GET3D/tree/master/render_shapenet_data) to render Shapenet dataset.
 
-#### Generate pseudo captions
+#### Generate pseudo captions (optional)
 Run pseudo caption generation script
 
 ```bash
